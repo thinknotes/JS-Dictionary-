@@ -1,9 +1,8 @@
 //Definations for dictionary
-
 const yes = {
     name: "yes", 
     partofspeech: "noun", 
-    definitions: "Used to give an affirmative response." + "Used as a response to someone addressing one or otherwise trying to attract one's attention."
+    definitions: "Used to give an affirmative response. Used as a response to someone addressing one or otherwise trying to attract one's attention."
 }
 
 const panacea = {
@@ -21,25 +20,25 @@ const concatenation = {
 const saw = {
     name: "saw",
     partofspeech: "verb",
-    definitions: "Cut (something) using a saw." + "Make rapid to-and-fro motions in cutting something or in playing a stringed instrument."
+    definitions: "Cut (something) using a saw. Make rapid to-and-fro motions in cutting something or in playing a stringed instrument."
 }
 
 const found = {
     name: "found", 
     partofspeech: "adjective", 
-    definitions: "Having been discovered by chance or unexpectedly." + "(of a ship) Equipped; Supplied."
+    definitions: "Having been discovered by chance or unexpectedly. (of a ship) Equipped; Supplied."
 }
 
 const crane = {
     name: "crane", 
     partofspeech: "verb", 
-    definitions: "Stretch out one's body or neck in order to see something." + "Move (a heavy object) with a crane."
+    definitions: "Stretch out one's body or neck in order to see something. Move (a heavy object) with a crane."
 }
 
 const minute = {
     name: "minute",
     partofspeech: "noun", 
-    definitions: "A period of time equal to sixty seconds or a sixtieth of an hour." + "A sixtieth of a degree of angular measurement (symbol: ʹ)"
+    definitions: "A period of time equal to sixty seconds or a sixtieth of an hour. A sixtieth of a degree of angular measurement (symbol: ')"
 }
 
 const grotesque = {
@@ -60,5 +59,27 @@ const debacle = {
     definitions: "A sudden and ignominious failure; a fiasco."
 }
 
-let words = [yes, panacea, concatenation, saw, found, crane, minute, grotesque, label, debacle ]
-console.log("DEBUG Current Word Bank: " + yes(name))
+const obj_list = [yes, panacea, concatenation, saw, found, crane, minute, grotesque, debacle];
+
+//Console log of definations
+
+const input = document.getElementById("search");
+const searchButton = document.getElementById("searchbtn");
+const def = document.getElementById("def");
+const word = document.getElementById("name");
+const part = document.getElementById("part");
+const fail = document.getElementById("fail");
+
+function Search() {
+    serTerm = input.value;
+    for(var a = 0; a < obj_list.length; a++){
+        if(obj_list[a].name === serTerm){
+            word.innerText = "name" + obj_list[a].name;
+            part.innerText = "part" + obj_list[a].partofspeech;
+            def.innerText = "def" + obj_list[a].definitions;
+        }
+    }
+    fail.innerText = "Word is not in dictionary";
+}
+
+searchButton.addEventListener("click", Search)

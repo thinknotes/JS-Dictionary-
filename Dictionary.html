@@ -13,11 +13,19 @@
     <section class="main">
         <h1 class="title">Simple Terms</h1>
         <h2 class="subtitle">Want to learn something new, discover it with us!!</h2>
-        <input type="text" class="search" placeholder="Find new words">
-        <button class="searchbtn">
+        <input type="text" id="search" class="search" placeholder="Find new words">
+        <button id="searchbtn" type = "submit">
             Search
         </button>
     </section>
-    <div></div>
+    <section>
+        <div id="results">
+
+            <h2 id="name">Name:</h2>
+            <h2 id="part">Part: </h2>
+            <h2 id="def">Definitions: </h2>
+        </div>
+        <p id = "fail" style="border: 1px soild red;"></p>
+    </section>
 </body>
 </html>

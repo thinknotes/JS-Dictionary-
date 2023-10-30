@@ -21,7 +21,7 @@ body {
     border-radius: 20px;
 }
 
-.searchbtn {
+#searchbtn {
    background-color: cornflowerblue;
    border: none;
    height: 30px;
@@ -31,4 +31,16 @@ body {
 
 input:hover{
     border-color: cornflowerblue;
+}
+
+/* Results Code */
+
+#results {
+    text-align: left;
+    font-size: smaller;
+    border: 1px solid cornflowerblue;
+    width: 400px; 
+    margin: 0 auto;
+    padding: 10px;
+   
 }
